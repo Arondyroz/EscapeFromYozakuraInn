@@ -4,19 +4,19 @@ on:
 
 jobs:
   request_file:
-    name: Request manual activation file (.alf) 
+    name: Request manual activation file (.alf) 🤖
     runs-on: ubuntu-latest
     steps:
-      # Langkah 1: Checkout repository kamu
+      # Langkah 1: Checkout repository kamu (Wajib)
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Langkah 2: Meminta file .alf menggunakan versi terbaru (v4)
+      # Langkah 2: Meminta file .alf menggunakan versi v3 (Ini versi yang benar!)
       - name: Request manual activation file
         id: getManualLicenseFile
-        uses: game-ci/unity-request-activation-file@v4
+        uses: game-ci/unity-request-activation-file@v3
 
-      # Langkah 3: Mengunggah file .alf menggunakan versi terbaru (v4)
+      # Langkah 3: Mengunggah file .alf menggunakan versi terbaru v4
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
