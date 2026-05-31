@@ -1,0 +1,22 @@
+name: Unity Actions
+
+# Robot ini akan berjalan setiap kali kamu melakukan 'push' ke branch main/master
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  buka-pintu-devops:
+    name: Robot Mulai Bekerja 🤖
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Langkah 1: Checkout (Mengambil kode dari repository)
+      - name: Mengambil kode project
+        uses: actions/checkout@v4
+        with:
+          lfs: true # Aktifkan ini kalau project Unity-mu pakai Git LFS
+
+      # Langkah Tes Sederhana
+      - name: Cek isi folder
+        run: ls -la
